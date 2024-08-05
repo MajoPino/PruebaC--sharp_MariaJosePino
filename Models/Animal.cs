@@ -34,7 +34,11 @@ public class Animal
         return Name;
     }
 
-
+    public void SetName(string name)
+    {
+        Name = name;
+    }
+    
     public virtual void ShowInformation()
     {
         string? birthToString = Convert.ToString(Birthdate);

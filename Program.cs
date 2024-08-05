@@ -81,6 +81,35 @@ void ShowPatient()
     BackToMenu();
 }
 
+void TrimFur()
+{
+    Console.WriteLine("Please, enter the kind of animal you want to trim their fur (cat/dog): ");
+    string? animal = Console.ReadLine().Trim().ToLower();
+    ManagerApp.ShowSeparator();
+    VeterinaryClinic.TrimFur(animal);
+    BackToMenu();
+}
+
+void Castrate()
+{
+    Console.WriteLine("Please, enter the kind of animal you want to castrate (cat/dog): ");
+    string? animal = Console.ReadLine().Trim().ToLower();
+    ManagerApp.ShowSeparator();
+    VeterinaryClinic.Castrate(animal);
+    BackToMenu();
+}
+
+/* void UpdateDog()
+{
+    Console.WriteLine("Please, enter the id of the dog you'd like to update: ");
+    int id = Convert.ToInt16(Console.ReadLine().Trim());
+    ManagerApp.ShowSeparator();
+    Console.WriteLine("Please, enter the name of the dog you'd like to update: ");
+    string? name = Console.ReadLine().Trim().ToLower(); 
+    VeterinaryClinic.UpdateDog(name, id);
+    BackToMenu();
+} */
+
 // Program function
 
 void Main()
@@ -137,6 +166,18 @@ void Main()
         //Search patient
         Console.Clear();
         ShowPatient();
+        break;
+
+        case 8:
+        //Trim fur
+        Console.Clear();
+        TrimFur();
+        break;
+
+        case 9:
+        //Castrate Animal
+        Console.Clear();
+        Castrate();
         break;
 
         case 0:
