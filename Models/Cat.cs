@@ -16,7 +16,13 @@ namespace PruebaC__sharp_MariaJosePino.Models;
             FurLenght = furLenght.Trim().ToLower();
         }
 
-        public void CastrateAnimal()
+    public override void ShowInformation()
+    {
+        base.ShowInformation();
+        Console.Write(@$"| Fur lenght: {FurLenght}");
+    }
+
+    public void CastrateAnimal()
         {
             if (BreedingStatus == false)
             {

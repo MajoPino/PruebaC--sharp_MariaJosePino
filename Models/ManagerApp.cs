@@ -8,6 +8,37 @@ namespace PruebaC__sharp_MariaJosePino.Models;
 
 public static class ManagerApp
 {
+    public static bool isBred()
+    {
+        bool BreedingStatus = false;
+        bool flag = true;
+
+        while (flag)
+        {
+            Console.WriteLine(@$"Is the new dog already castrated? (y/n): ");
+            string? isBred = Console.ReadLine().Trim().ToLower();
+            if (isBred == "y")
+            {
+                BreedingStatus = true;
+                flag = false;
+                break;
+            }
+            else if (isBred == "n")
+            {
+                BreedingStatus = false;
+                flag = false;
+                break;
+            }
+            else
+            {
+                ShowSeparator();
+                Console.WriteLine(@$"Invalid option. Please, try again.
+                ");
+            }
+        }
+        return BreedingStatus;
+    }
+
     public static Dog CreateDog()
     {
         Console.WriteLine(@$"Please enter the new dog's id: ");
@@ -28,28 +59,7 @@ public static class ManagerApp
         Console.WriteLine(@$"Please enter the new dog's weight (in kg): ");
         double WeightInKg = Convert.ToDouble(Console.ReadLine());
         ShowSeparator();
-        bool BreedingStatus = false;
-        while (true)
-        {
-            Console.WriteLine(@$"Is the new dog already castrated? (y/n): ");
-            string? isBred = Console.ReadLine().Trim().ToLower();
-            if (isBred == "y")
-            {
-                BreedingStatus = true;
-                break;
-            }
-            else if (isBred == "n")
-            {
-                BreedingStatus = false;
-                break;
-            }
-            else
-            {
-                ShowSeparator();
-                Console.WriteLine(@$"
-Invalid option. Please, try again.");
-            }
-        }
+        bool BreedingStatus = isBred();
         ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's temperament: ");
         string? Temperament = Console.ReadLine();
@@ -108,8 +118,8 @@ Invalid option. Please, try again.");
             else
             {
                 ShowSeparator();
-                Console.WriteLine(@$"
-Invalid option. Please, try again.");
+                Console.WriteLine(@$"Invalid option. Please, try again.
+                ");
             }
         }
         ShowSeparator();
@@ -151,8 +161,8 @@ Invalid option. Please, try again.");
 .......................................................................
 | 1. Add a new dog.                                                   |
 | 2. Add a new cat.                                                   |
-| 3. List all the cats.                                               |
-| 4. List all the dogs.                                               |
+| 3. List all the patients.                                           |
+| 4. List animals.                                                    |
 | 0. Exit the program.                                                |
 .......................................................................");
     }

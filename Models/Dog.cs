@@ -22,7 +22,13 @@ namespace PruebaC__sharp_MariaJosePino.Models;
             CoatType = coatType.Trim().ToLower();
         }
 
-        public void CastrateAnimal()
+    public override void ShowInformation()
+    {
+        base.ShowInformation();
+        Console.Write(@$"| Temperament: {Temperament} | Microchip number: {MicrochipNumber} | Barking Volume: {BarkVolume} | Coat type: {CoatType} |");
+    }
+
+    public void CastrateAnimal()
         {
             if (BreedingStatus == false)
             {

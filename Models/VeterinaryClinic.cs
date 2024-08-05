@@ -44,8 +44,31 @@ namespace PruebaC__sharp_MariaJosePino.Models;
         public void DeleteCat(int id)
         {}
 
-        public void ShowAllPatients()
-        {}
+        public static void ShowAllPatients()
+        {
+            Console.WriteLine(@$"
+-----------------------------------------------------------------------
+|                              DOGS                                   |
+-----------------------------------------------------------------------");
+            foreach (Dog dog in Dogs)
+            {
+                dog.ShowInformation();
+                Console.WriteLine(@$"
+-----------------------------------------------------------------------");
+            }
+
+            Console.WriteLine(@$"
+-----------------------------------------------------------------------
+|                              CATS                                   |
+-----------------------------------------------------------------------");
+
+            foreach (Cat cat in Cats)
+            {
+                cat.ShowInformation();
+                Console.WriteLine(@$"
+-----------------------------------------------------------------------");
+            }
+        }
 
         public void ShowAllAnimals(string type)
         {}

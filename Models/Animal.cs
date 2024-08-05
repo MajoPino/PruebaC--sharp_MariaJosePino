@@ -24,21 +24,22 @@ public class Animal
         WeightInKg = weightInKg;
     }
 
-    public void ShowInformation()
+    public virtual void ShowInformation()
     {
-        string? birthToString = Convert.ToString(Birthdate.Year);
-        Console.WriteLine(@$"Name: {Name} | Birthdate: {birthToString} | Breed: {Breed} | Color: {Color} | Weight: {WeightInKg} Kg");
+        string? birthToString = Convert.ToString(Birthdate);
+        string? ageInMonths = Convert.ToString(CalculateAgeInMonths());
+        Console.WriteLine(@$"| Name: {Name} | Birthdate: {birthToString} | Age: {ageInMonths} months | Breed: {Breed} | Color: {Color} | Weight: {WeightInKg} Kg ");
     }
 
     protected void BasicReview()
     {
-        Console.WriteLine(@$"Name {Name} of breed {Breed} weights {WeightInKg} kg");
+        Console.Write(@$"Name {Name} of breed {Breed} weights {WeightInKg} kg ");
     }
 
     protected int CalculateAgeInMonths()
     {
-        int birth = Convert.ToInt32(Birthdate.Year);
-        int today = Convert.ToInt32(DateTime.Now);
+        int birth = Birthdate.Year;
+        int today = DateTime.Now.Year;
         int ageInYears = today - birth;
         int ageInMonths = ageInYears * 12;
         return ageInMonths;
