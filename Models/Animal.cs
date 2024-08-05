@@ -17,10 +17,10 @@ public class Animal
     public Animal(int id, string name, DateOnly birthdate, string breed, string color, double weightInKg)
     {
         Id = id;
-        Name = name;
+        Name = name.Trim().ToLower();
         Birthdate = birthdate;
-        Breed = breed;
-        Color = color;
+        Breed = breed.Trim().ToLower();
+        Color = color.Trim().ToLower();
         WeightInKg = weightInKg;
     }
 
