@@ -46,6 +46,14 @@ void ShowAllPatients()
     BackToMenu();
 }
 
+void ShowAllAnimals()
+{
+    Console.WriteLine("Which animal you want to see the information listed? (cats/dogs): ");
+    string? option = Console.ReadLine().Trim().ToLower();
+    VeterinaryClinic.ShowAllAnimals(option);
+    BackToMenu();
+}
+
 // Program function
 
 void Main()
@@ -83,7 +91,7 @@ void Main()
         case 4:
         //Show Animals
         Console.Clear();
-        Console.WriteLine("Work in progress...");
+        ShowAllAnimals();
         break;
 
         case 0:

@@ -70,8 +70,40 @@ namespace PruebaC__sharp_MariaJosePino.Models;
             }
         }
 
-        public void ShowAllAnimals(string type)
-        {}
+        public static void ShowAllAnimals(string type)
+        {
+            if (type == "cats")
+            {
+                Console.WriteLine(@$"
+-----------------------------------------------------------------------
+|                              CATS                                   |
+-----------------------------------------------------------------------");
+
+            foreach (Cat cat in Cats)
+            {
+                cat.ShowInformation();
+                Console.WriteLine(@$"
+-----------------------------------------------------------------------");
+            }
+            }
+            else if (type == "dogs")
+            {
+                Console.WriteLine(@$"
+-----------------------------------------------------------------------
+|                              DOGS                                   |
+-----------------------------------------------------------------------");
+            foreach (Dog dog in Dogs)
+            {
+                dog.ShowInformation();
+                Console.WriteLine(@$"
+-----------------------------------------------------------------------");
+            }
+            }
+            else
+            {
+                Console.WriteLine(@"Invalid option. Please, try again.");
+            }
+        }
 
         public void ShowPatient(int idPatient)
         {}
