@@ -24,6 +24,17 @@ public class Animal
         WeightInKg = weightInKg;
     }
 
+    public int ReturnId()
+    {
+        return Id;
+    }
+
+    public string ReturnName()
+    {
+        return Name;
+    }
+
+
     public virtual void ShowInformation()
     {
         string? birthToString = Convert.ToString(Birthdate);

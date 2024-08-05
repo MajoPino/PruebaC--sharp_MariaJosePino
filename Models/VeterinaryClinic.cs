@@ -38,11 +38,33 @@ namespace PruebaC__sharp_MariaJosePino.Models;
         public void UpdateCat(Cat cat)
         {}
 
-        public void DeleteDog(int id)
-        {}
+        public static void DeleteDog(int id)
+        {
+            var dog = Dogs.FirstOrDefault(x => x.ReturnId() == id);
+            if (dog != null)
+            {
+                Dogs.Remove(dog);
+                Console.WriteLine("Dog deleted succesfully!");
+            }
+            else
+            {  
+                Console.WriteLine($"The dog with the id {id} doesn't exist. Please, try again.");
+            }
+        }
 
-        public void DeleteCat(int id)
-        {}
+        public static void DeleteCat(int id)
+        {
+            var cat = Cats.FirstOrDefault(x => x.ReturnId() == id);
+            if (cat != null)
+            {
+                Cats.Remove(cat);
+                Console.WriteLine("Cat deleted succesfully!");
+            }
+            else
+            {  
+                Console.WriteLine($"The cat with the id {id} doesn't exist. Please, try again.");
+            }
+        }
 
         public static void ShowAllPatients()
         {

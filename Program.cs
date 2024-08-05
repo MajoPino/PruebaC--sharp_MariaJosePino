@@ -54,6 +54,22 @@ void ShowAllAnimals()
     BackToMenu();
 }
 
+void DeleteDog()
+{
+    Console.WriteLine("Please, enter the id of the dog you'd like to delete: ");
+    int id = Convert.ToInt16(Console.ReadLine().Trim());
+    VeterinaryClinic.DeleteDog(id);
+    BackToMenu();
+}
+
+void DeleteCat()
+{
+    Console.WriteLine("Please, enter the id of the cat you'd like to delete: ");
+    int id = Convert.ToInt16(Console.ReadLine().Trim());
+    VeterinaryClinic.DeleteCat(id);
+    BackToMenu();
+}
+
 // Program function
 
 void Main()
@@ -94,7 +110,20 @@ void Main()
         ShowAllAnimals();
         break;
 
+        case 5:
+        //Delete dog
+        Console.Clear();
+        DeleteDog();
+        break;
+
+        case 6:
+        //Delete cat
+        Console.Clear();
+        DeleteCat();
+        break;
+
         case 0:
+        //Exit the program
         Console.Clear();
         Console.WriteLine("Thanks for using the program!");
         ManagerApp.ShowFooter();

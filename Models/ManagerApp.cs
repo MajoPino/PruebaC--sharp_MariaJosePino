@@ -163,6 +163,8 @@ public static class ManagerApp
 | 2. Add a new cat.                                                   |
 | 3. List all the patients.                                           |
 | 4. List animals.                                                    |
+| 5. Delete dog.                                                      |
+| 6. Delete cat.                                                      |
 | 0. Exit the program.                                                |
 .......................................................................");
     }
