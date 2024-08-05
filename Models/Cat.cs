@@ -18,8 +18,10 @@ namespace PruebaC__sharp_MariaJosePino.Models;
 
     public override void ShowInformation()
     {
+        string? birthToString = Convert.ToString(Birthdate);
+        string? ageInMonths = Convert.ToString(CalculateAgeInMonths());
         base.ShowInformation();
-        Console.Write(@$"| Fur lenght: {FurLenght}");
+        Console.WriteLine(@$"| Name: {Name} | Birthdate: {birthToString} | Age: {ageInMonths} months | Breed: {Breed} | Color: {Color} | Weight: {WeightInKg} Kg | Fur lenght: {FurLenght}");
     }
 
     public void CastrateAnimal()

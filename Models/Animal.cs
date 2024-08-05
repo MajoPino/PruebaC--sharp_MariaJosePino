@@ -28,7 +28,6 @@ public class Animal
     {
         string? birthToString = Convert.ToString(Birthdate);
         string? ageInMonths = Convert.ToString(CalculateAgeInMonths());
-        Console.WriteLine(@$"| Name: {Name} | Birthdate: {birthToString} | Age: {ageInMonths} months | Breed: {Breed} | Color: {Color} | Weight: {WeightInKg} Kg ");
     }
 
     protected void BasicReview()

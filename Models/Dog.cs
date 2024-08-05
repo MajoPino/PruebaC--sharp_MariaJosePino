@@ -24,8 +24,10 @@ namespace PruebaC__sharp_MariaJosePino.Models;
 
     public override void ShowInformation()
     {
+        string? birthToString = Convert.ToString(Birthdate);
+        string? ageInMonths = Convert.ToString(CalculateAgeInMonths());
         base.ShowInformation();
-        Console.Write(@$"| Temperament: {Temperament} | Microchip number: {MicrochipNumber} | Barking Volume: {BarkVolume} | Coat type: {CoatType} |");
+        Console.WriteLine(@$"| Name: {Name} | Birthdate: {birthToString} | Age: {ageInMonths} months | Breed: {Breed} | Color: {Color} | Weight: {WeightInKg} Kg | Temperament: {Temperament} | Microchip number: {MicrochipNumber} | Barking Volume: {BarkVolume} | Coat type: {CoatType} |");
     }
 
     public void CastrateAnimal()
