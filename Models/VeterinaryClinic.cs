@@ -127,6 +127,22 @@ namespace PruebaC__sharp_MariaJosePino.Models;
             }
         }
 
-        public void ShowPatient(int idPatient)
-        {}
+        public static void ShowPatient(string namePatient, int idPatient)
+        {
+            var cat = Cats.FirstOrDefault(x => x.ReturnId() == idPatient && x.ReturnName() == namePatient);
+            var dog = Dogs.FirstOrDefault(x => x.ReturnId() == idPatient && x.ReturnName() == namePatient);
+
+            if (cat != null)
+            {
+                cat.ShowInformation();
+            }
+            else if (dog != null)
+            {
+                dog.ShowInformation();
+            }
+            else
+            {  
+                Console.WriteLine($"The animal with the id {idPatient} and the name {namePatient} doesn't exist. Please, try again.");
+            }
+        }
     }

@@ -70,6 +70,17 @@ void DeleteCat()
     BackToMenu();
 }
 
+void ShowPatient()
+{
+    Console.WriteLine("Please, enter the id of the animal you'd like to search: ");
+    int id = Convert.ToInt16(Console.ReadLine().Trim());
+    ManagerApp.ShowSeparator();
+    Console.WriteLine("Please, enter the name of the animal you'd like to search: ");
+    string? name = Console.ReadLine().Trim().ToLower(); 
+    VeterinaryClinic.ShowPatient(name, id);
+    BackToMenu();
+}
+
 // Program function
 
 void Main()
@@ -120,6 +131,12 @@ void Main()
         //Delete cat
         Console.Clear();
         DeleteCat();
+        break;
+        
+        case 7:
+        //Search patient
+        Console.Clear();
+        ShowPatient();
         break;
 
         case 0:
