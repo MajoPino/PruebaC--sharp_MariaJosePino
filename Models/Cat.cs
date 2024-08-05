@@ -37,6 +37,47 @@ namespace PruebaC__sharp_MariaJosePino.Models;
             }
         }
 
+        public static bool isBred()
+    {
+        bool BreedingStatus = false;
+        bool flag = true;
+
+        while (flag)
+        {
+            Console.WriteLine(@$"Is the cat already castrated? (y/n): ");
+            string? isBred = Console.ReadLine().Trim().ToLower();
+            if (isBred == "y")
+            {
+                BreedingStatus = true;
+                flag = false;
+                break;
+            }
+            else if (isBred == "n")
+            {
+                BreedingStatus = false;
+                flag = false;
+                break;
+            }
+            else
+            {
+                Console.WriteLine(@$"-----------------------------------------------------------------------");
+                Console.WriteLine(@$"Invalid option. Please, try again.
+                ");
+            }
+        }
+        return BreedingStatus;
+    }
+
+    public override void UpdateSelf()
+    {
+        base.UpdateSelf();
+        BreedingStatus = isBred();
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+        Console.WriteLine(@$"Please enter the new fur lenght (long, medium, short, hairless): ");
+        FurLenght = Console.ReadLine().Trim().ToLower();
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+    }
+
         public void HairDress()
         {
             if (FurLenght == "long")

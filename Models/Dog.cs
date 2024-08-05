@@ -60,39 +60,24 @@ public class Dog : Animal
         return BreedingStatus;
     }
 
-    /* public static void UpdateSelf()
+    public override void UpdateSelf()
     {
-        Console.WriteLine(@$"Please enter the new name: ");
-        string? name = Console.ReadLine();
-        Animal.SetName()
-        Console.WriteLine(@$"-----------------------------------------------------------------------");
-        Console.WriteLine(@$"Please enter the new birthdate (yyyy/mm/dd): ");
-        BirthDate = DateOnly.Parse(Console.ReadLine());
-        Console.WriteLine(@$"-----------------------------------------------------------------------");
-        Console.WriteLine(@$"Please enter the new breed: ");
-        Breed = Console.ReadLine();
-        Console.WriteLine(@$"-----------------------------------------------------------------------");
-        Console.WriteLine(@$"Please enter the new color: ");
-        Color = Console.ReadLine();
-        Console.WriteLine(@$"-----------------------------------------------------------------------");
-        Console.WriteLine(@$"Please enter the dog's weight (in kg): ");
-        WeightInKg = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine(@$"-----------------------------------------------------------------------");
+        base.UpdateSelf();
         BreedingStatus = isBred();
         Console.WriteLine(@$"-----------------------------------------------------------------------");
         Console.WriteLine(@$"Please enter the new temperament: ");
-        Temperament = Console.ReadLine();
+        Temperament = Console.ReadLine().Trim().ToLower();
         Console.WriteLine(@$"-----------------------------------------------------------------------");
         Console.WriteLine(@$"Please enter the new microchip number: ");
-        MicrochipNumber = Console.ReadLine();
+        MicrochipNumber = Console.ReadLine().Trim().ToLower();
         Console.WriteLine(@$"-----------------------------------------------------------------------");
         Console.WriteLine(@$"Please enter the new barking volume: ");
-        BarkVolume = Console.ReadLine();
+        BarkVolume = Console.ReadLine().Trim().ToLower();
         Console.WriteLine(@$"-----------------------------------------------------------------------");
-        Console.WriteLine(@$"Please enter the new coat type: ");
-        CoatType = Console.ReadLine();
+        Console.WriteLine(@$"Please enter the new coat type (long, medium, short, hairless): ");
+        CoatType = Console.ReadLine().Trim().ToLower();
         Console.WriteLine(@$"-----------------------------------------------------------------------");
-    } */
+    }
 
     public void CastrateAnimal()
     {

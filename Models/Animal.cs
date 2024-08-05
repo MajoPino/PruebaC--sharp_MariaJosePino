@@ -34,10 +34,25 @@ public class Animal
         return Name;
     }
 
-    public void SetName(string name)
+    public virtual void UpdateSelf()
     {
-        Name = name;
+        Console.WriteLine(@$"Please enter the new name: ");
+        Name = Console.ReadLine().Trim().ToLower();
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+        Console.WriteLine(@$"Please enter the new birthdate (yyyy/mm/dd): ");
+        Birthdate = DateOnly.Parse(Console.ReadLine());
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+        Console.WriteLine(@$"Please enter the new breed: ");
+        Breed = Console.ReadLine().Trim().ToLower();
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+        Console.WriteLine(@$"Please enter the new color: ");
+        Color = Console.ReadLine().Trim().ToLower();
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+        Console.WriteLine(@$"Please enter the new weight (in kg): ");
+        WeightInKg = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
     }
+
     
     public virtual void ShowInformation()
     {

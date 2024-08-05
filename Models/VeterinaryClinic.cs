@@ -35,11 +35,21 @@ public class VeterinaryClinic
     public static void UpdateDog(string name, int id)
     {
         var dog = Dogs.FirstOrDefault(x => x.ReturnId() == id && x.ReturnName() == name);
+        if (dog != null)
+        {
+            dog.UpdateSelf();
+        }
 
     }
 
-    public void UpdateCat(Cat cat)
-    { }
+    public static void UpdateCat(string name, int id)
+    {
+        var cat = Cats.FirstOrDefault(x => x.ReturnId() == id && x.ReturnName() == name);
+        if (cat != null)
+        {
+            cat.UpdateSelf();
+        }
+    }
 
     public static void DeleteDog(int id)
     {

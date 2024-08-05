@@ -99,7 +99,7 @@ void Castrate()
     BackToMenu();
 }
 
-/* void UpdateDog()
+void UpdateDog()
 {
     Console.WriteLine("Please, enter the id of the dog you'd like to update: ");
     int id = Convert.ToInt16(Console.ReadLine().Trim());
@@ -108,7 +108,17 @@ void Castrate()
     string? name = Console.ReadLine().Trim().ToLower(); 
     VeterinaryClinic.UpdateDog(name, id);
     BackToMenu();
-} */
+}
+void UpdateCat()
+{
+    Console.WriteLine("Please, enter the id of the cat you'd like to update: ");
+    int id = Convert.ToInt16(Console.ReadLine().Trim());
+    ManagerApp.ShowSeparator();
+    Console.WriteLine("Please, enter the name of the cat you'd like to update: ");
+    string? name = Console.ReadLine().Trim().ToLower(); 
+    VeterinaryClinic.UpdateCat(name, id);
+    BackToMenu();
+}
 
 // Program function
 
@@ -178,6 +188,18 @@ void Main()
         //Castrate Animal
         Console.Clear();
         Castrate();
+        break;
+
+        case 10:
+        //Update dog
+        Console.Clear();
+        UpdateDog();
+        break;
+
+        case 11:
+        //Update Cat
+        Console.Clear();
+        UpdateCat();
         break;
 
         case 0:

@@ -168,6 +168,8 @@ public static class ManagerApp
 | 7. Search patient.                                                  |
 | 8. Trim fur.                                                        |
 | 9. Castrate animal.                                                 |
+| 10. Update dog.                                                     |
+| 11. Update cat.                                                     |
 | 0. Exit the program.                                                |
 .......................................................................");
     }
