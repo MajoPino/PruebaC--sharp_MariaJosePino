@@ -33,7 +33,7 @@ namespace PruebaC__sharp_MariaJosePino.Models;
         {
             if (FurLenght == "long")
             {
-                Console.WriteLine(@$"What size you want your cat's hair to be?
+                Console.WriteLine(@$"What size you want your cat's fur lenght to be?
                 1. Medium
                 2. Short");
                 int mediumOrShort = Convert.ToInt16(Console.ReadLine());
@@ -41,7 +41,7 @@ namespace PruebaC__sharp_MariaJosePino.Models;
                 if (mediumOrShort == 1)
                 {
                     FurLenght = "medium";
-                    Console.WriteLine(@$"Your Cat's hair has been trimmed to a medium size.");
+                    Console.WriteLine(@$"Your Cat's fur has been trimmed to a medium size.");
                 }
                 else if (mediumOrShort == 2)
                 {
@@ -56,11 +56,11 @@ namespace PruebaC__sharp_MariaJosePino.Models;
             else if (FurLenght == "medium")
             {
                 FurLenght = "short";
-                Console.WriteLine(@$"Your Cat's hair has been trimmed to a short size.");
+                Console.WriteLine(@$"Your Cat's fur has been trimmed to a short size.");
             }
             else if (FurLenght == "short" || FurLenght == "hairless")
             {
-                Console.WriteLine("There's no need to trim your Cat's hair.");
+                Console.WriteLine("There's no need to trim your Cat's fur.");
             }
             else
             {
