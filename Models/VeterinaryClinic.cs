@@ -8,8 +8,8 @@ namespace PruebaC__sharp_MariaJosePino.Models;
 
     public class VeterinaryClinic
     {
-        public string? Name { get; set; }
-        public string? Address { get; set; }
+        public static string? Name { get; set; }
+        public static string? Address { get; set; }
         public List<Dog> Dogs = new List<Dog>();
         public List<Cat> Cats = new List<Cat>();
 

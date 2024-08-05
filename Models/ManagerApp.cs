@@ -12,16 +12,22 @@ public class ManagerApp
     {
         Console.WriteLine(@$"Please enter the new dog's id: ");
         int Id = Convert.ToInt16(Console.ReadLine());
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's name: ");
         string? Name = Console.ReadLine();
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's birthdate (yyyy/mm/dd): ");
         DateOnly BirthDate = DateOnly.Parse(Console.ReadLine());
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's breed: ");
         string? Breed = Console.ReadLine();
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's color: ");
         string? Color = Console.ReadLine();
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's weight (in kg): ");
         double WeightInKg = Convert.ToDouble(Console.ReadLine());
+        ShowSeparator();
         bool BreedingStatus = false;
         while (true)
         {
@@ -39,22 +45,104 @@ public class ManagerApp
             }
             else
             {
+                ShowSeparator();
                 Console.WriteLine(@$"
 Invalid option. Please, try again.");
             }
         }
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's temperament: ");
         string? Temperament = Console.ReadLine();
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's microchip number: ");
         string? MicrochipNumber = Console.ReadLine();
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's barking volume: ");
         string? BarkVolume = Console.ReadLine();
+        ShowSeparator();
         Console.WriteLine(@$"Please enter the new dog's coat type: ");
         string? CoatType = Console.ReadLine();
+        ShowSeparator();
 
         Dog newDog = new Dog(Id, Name, BirthDate, Breed, Color, WeightInKg, BreedingStatus, Temperament, MicrochipNumber, BarkVolume, CoatType);
         
         return newDog;
 
     }
+
+    public Cat CreateCat()
+    {
+        Console.WriteLine(@$"Please enter the new cat's id: ");
+        int Id = Convert.ToInt16(Console.ReadLine());
+        ShowSeparator();
+        Console.WriteLine(@$"Please enter the new cat's name: ");
+        string? Name = Console.ReadLine();
+        ShowSeparator();
+        Console.WriteLine(@$"Please enter the new cat's birthdate (yyyy/mm/dd): ");
+        DateOnly BirthDate = DateOnly.Parse(Console.ReadLine());
+        ShowSeparator();
+        Console.WriteLine(@$"Please enter the new cat's breed: ");
+        string? Breed = Console.ReadLine();
+        ShowSeparator();
+        Console.WriteLine(@$"Please enter the new cat's color: ");
+        string? Color = Console.ReadLine();
+        ShowSeparator();
+        Console.WriteLine(@$"Please enter the new cat's weight (in kg): ");
+        double WeightInKg = Convert.ToDouble(Console.ReadLine());
+        ShowSeparator();
+        bool BreedingStatus = false;
+        while (true)
+        {
+            Console.WriteLine(@$"Is the new cat already castrated? (y/n): ");
+            string? isBred = Console.ReadLine().Trim().ToLower();
+            if (isBred == "y")
+            {
+                BreedingStatus = true;
+                break;
+            }
+            else if (isBred == "n")
+            {
+                BreedingStatus = false;
+                break;
+            }
+            else
+            {
+                ShowSeparator();
+                Console.WriteLine(@$"
+Invalid option. Please, try again.");
+            }
+        }
+        ShowSeparator();
+        Console.WriteLine(@$"Please enter the new dog's fur lenght (long, medium, short, hairless): ");
+        string? FurLenght = Console.ReadLine();
+        ShowSeparator();
+
+        Cat newCat = new Cat(Id, Name, BirthDate, Breed, Color, WeightInKg, BreedingStatus, FurLenght);
+        
+        return newCat;
+
+    }
+
+    public void ShowHeader()
+    {
+        string veterinaryUpper = VeterinaryClinic.Name.ToUpper();
+        Console.WriteLine(@$"
+-----------------------------------------------------------------------
+|   WELCOME TO THE VETERINARY MANAGEMENT SYSTEM OF {veterinaryUpper}  |
+-----------------------------------------------------------------------");
+    }
+
+    public void ShowFooter()
+    {
+        Console.WriteLine(@$".......................................................................
+    {VeterinaryClinic.Name} {VeterinaryClinic.Address}");
+    }
+
+    public void ShowSeparator()
+    {
+        Console.WriteLine(@$"-----------------------------------------------------------------------");
+    }
+
+
+
 }
