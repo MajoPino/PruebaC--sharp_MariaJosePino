@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PruebaC__sharp_MariaJosePino.Models;
 
-public class ManagerApp
+public static class ManagerApp
 {
-    public Dog CreateDog()
+    public static Dog CreateDog()
     {
         Console.WriteLine(@$"Please enter the new dog's id: ");
         int Id = Convert.ToInt16(Console.ReadLine());
@@ -70,7 +70,7 @@ Invalid option. Please, try again.");
 
     }
 
-    public Cat CreateCat()
+    public static Cat CreateCat()
     {
         Console.WriteLine(@$"Please enter the new cat's id: ");
         int Id = Convert.ToInt16(Console.ReadLine());
@@ -123,7 +123,7 @@ Invalid option. Please, try again.");
 
     }
 
-    public void ShowHeader()
+    public static void ShowHeader()
     {
         string veterinaryUpper = VeterinaryClinic.Name.ToUpper();
         Console.WriteLine(@$"
@@ -132,13 +132,13 @@ Invalid option. Please, try again.");
 -----------------------------------------------------------------------");
     }
 
-    public void ShowFooter()
+    public static void ShowFooter()
     {
         Console.WriteLine(@$".......................................................................
     {VeterinaryClinic.Name} {VeterinaryClinic.Address}");
     }
 
-    public void ShowSeparator()
+    public static void ShowSeparator()
     {
         Console.WriteLine(@$"-----------------------------------------------------------------------");
     }
