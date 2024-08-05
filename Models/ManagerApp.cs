@@ -120,6 +120,7 @@ Invalid option. Please, try again.");
         Cat newCat = new Cat(Id, Name, BirthDate, Breed, Color, WeightInKg, BreedingStatus, FurLenght);
         
         return newCat;
+        
 
     }
 
@@ -135,12 +136,25 @@ Invalid option. Please, try again.");
     public static void ShowFooter()
     {
         Console.WriteLine(@$".......................................................................
-    {VeterinaryClinic.Name} {VeterinaryClinic.Address}");
+    {VeterinaryClinic.Name} | {VeterinaryClinic.Address} | 2024");
     }
 
     public static void ShowSeparator()
     {
         Console.WriteLine(@$"-----------------------------------------------------------------------");
+    }
+
+    public static void ShowMenu()
+    {
+        Console.WriteLine(@$".......................................................................
+| These are the program options:                                      |
+.......................................................................
+| 1. Add a new dog.                                                   |
+| 2. Add a new cat.                                                   |
+| 3. List all the cats.                                               |
+| 4. List all the dogs.                                               |
+| 0. Exit the program.                                                |
+.......................................................................");
     }
 
 
